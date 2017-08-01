@@ -20,6 +20,7 @@ Following technology used for developing this system
 * heroku
 * Cliniko - Healthcare practice management software
 
+# How we built it
 
 # Challenges we ran into
 * Implementing flaw less conversational flows with diverse contexts to serve different user requests.
