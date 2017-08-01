@@ -1,6 +1,6 @@
 
 # Inspiration
-What if I have my own  personal assistant who will be able to search all available practitioners, check their availability, make appointments for me, set reminders for due appointments and GP re-calls. The Goal is to have a centralized bot platform which connects all available practices (GP Clinics), so clients/patients will be able to choose any preferred practitioners from any clinics. 
+What if we have our own  personal assistant who will be able to search all available practitioners, check their availability, make appointments for me, set reminders for due appointments and GP re-calls. The Goal is to have a centralized bot platform which connects all available practices (GP Clinics), so clients/patients will be able to choose any preferred practitioners from any clinics. 
 
 # What it does
 
@@ -20,7 +20,7 @@ Following technology used for developing this system
 * heroku
 * Cliniko - Healthcare practice management software
 
-# How we built it
+# How it works?
 
 # Challenges we ran into
 * Implementing flaw less conversational flows with diverse contexts to serve different user requests.
