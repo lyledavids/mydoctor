@@ -20,7 +20,10 @@ Following technology used for developing this system
 * heroku
 * Cliniko - Healthcare practice management software
 
-# How it works?
+# Conversational flow
+
+* Welcome - New & un-registered users will be greeted with standard welcome message with the details of the services bot can offer and they will be prompted if they wish to proceed with on-boarding process
+* User On-boarding - If a client said 'yes' to on boarding option, MyDoctor will proceed with few basic user information 
 
 # Challenges we ran into
 * Implementing flaw less conversational flows with diverse contexts to serve different user requests.
