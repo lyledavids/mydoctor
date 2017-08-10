@@ -20,10 +20,19 @@ Following technology used for developing this system
 * heroku
 * Cliniko - Healthcare practice management software
 
-# Conversational flow
+# Conversational Work flow
 
-* Welcome - New & un-registered users will be greeted with standard welcome message with the details of the services bot can offer and they will be prompted if they wish to proceed with on-boarding process
-* User On-boarding - If a client said 'yes' to on boarding option, MyDoctor will proceed with few basic user information 
+* **Welcome** - New & un-registered users will be greeted with standard welcome message with the details of the services bot can offer and they will be prompted if they wish to proceed with on-boarding process
+* **user.on-boarding** - If a client said 'yes' to on boarding option, MyDoctor will start to collect few basic user information such as Firstname, lastname, date of birth, and address. Bot will skip asking the information which is known to it. for example, if fisrtname or lastname is available from Cisco Spark, Bot will use available information and gather only missing details.
+* **user.store** - Gathered user details will be stored in database
+* **greet.personal**-User will be identified and greeted personally after on boarding process is completed.
+* **Find.gp** - User can search available practitioners registered with myDoctor Bot platform
+* **book.Doctor** - If user's intention was to book a doctor, Bot will ask date, time details.
+* **book.confirm(user)** - user will be asked if he/she wants to confirm the appointment booking.
+* **patient.create** - If user confirms the booking, if it is a first time patient for the practice, gathered patient details will be inserted into practice management system. If booking request comes from an existing patient, this step will be skipped.
+* **Appointment.create** - If user confirms the booking, appointment will be created in practice management software.
+* **Appointment.alternate** - If user requested slot is not available, bot will suggest available slots for specific doctor.
+
 
 # Challenges we ran into
 * Implementing flaw less conversational flows with diverse contexts to serve different user requests.
