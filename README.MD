@@ -40,6 +40,7 @@ Following technology used for developing this system
 * You can search **MyDoctor** or **MyDoctor@sparkbot.io** in Cisco Spark app.
 * Simple **'hi'** will start the one to one conversation with bot.
 *  If you are a first time user, **MyDoctor** bot will walk you through few simple questions to on board you.
+* Type **"find a gp"** to find registered practitioners. For demo purposes MyDoctor will provide a list of doctors from a single practice.
 * Start typing **"I need to book an appointment with Dr Pat"** , bot will ask you for missing details (date & time).
 * If required date and time is available, Bot will make booking and give you the booking details.
 * If required date and time is unavailable, Bot will give you available slots so you can choose.
