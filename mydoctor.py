@@ -84,6 +84,8 @@ def getPractitionerDetails(practiceId,first_name):
                     practitionerDesignation  = p["designation"]
                     return practitionerId,practitionerFirstname,practitionerLastname,practitionerTitle,practitionerDesignation
 
+
+
 def getPractitionerDetailID(practiceId,practitionerId):
     if db.practices.find({"practiceId": int(practiceId)}).count() > 0:
         cursor = db.practices.find_one({"practiceId": int(practiceId)}, {"vendorName": 1,"apiKey": 1, "_id": 0})
@@ -110,6 +112,14 @@ def getPracticeIdDrName(first_name):
             for p in practitioners:
                 if p["first_name"]== first_name:
                     return practiceId
+
+def getAllpractitioners(practiceId):
+    cursor = db.practitioners.find({"practiceId":practiceId}, {"practitionerName": 1,"practiceName": 1, "_id": 0})
+    practitionersList=""
+    for doc in cursor:
+        practitionersList = practitionersList+ "**"+doc["practitionerName"]+"** ("+doc["practiceName"]+")\n\n"
+    return practitionersList
+
 
 def getAvailabletime(practiceId,practitionerId,vendorId,appointmentDate,appointment_type):
     if db.practices.find({"practiceId": practiceId}).count() > 0:
@@ -190,6 +200,17 @@ def firehosehook():
                 'displayText': 'It looks like I did not serve you before. I know little about yourself, but to become your assistant, I would like to know more about yourself, would you like to proceed?',
                 'data':{},
                 'contextOut':[{"name":"Welcome-followup", "lifespan":1, "parameters":{}}],
+                'source':""
+            }
+        elif action == "find.doctor":
+            practitionersList=getAllpractitioners(2)
+            postMessageBotOneToOne(personId,practitionersList)
+            #postMessageBotOneToOne(personId, "\n\n - **Dr Pat Jana** (Montague farm Medical center -distance 18km) \n\n - **Dr Emily Lathlean** (Montague farm Medical center -distance 18km) \n\n - **Dr Rachel Tan** (Mawson Lakes Healthcare -distance 20km)")
+            data = {
+                'speech': '',
+                'displayText': '',
+                'data':{},
+                'contextOut':[{"name":"appointment_booking", "lifespan":1, "parameters":{}}],
                 'source':""
             }
         elif action == "input.welcome" and db.users.find({"personId": personId}).count() > 0:
