@@ -31,7 +31,8 @@ Following technology used for developing this system
 * **book.confirm(user)** - user will be asked if he/she wants to confirm the appointment booking.
 * **patient.create** - If user confirms the booking, if it is a first time patient for the practice, gathered patient details will be inserted into practice management system. If booking request comes from an existing patient, this step will be skipped.
 * **Appointment.create** - If user confirms the booking, appointment will be created in practice management software.
-* **Appointment.alternate** - If user requested slot is not available, bot will suggest available slots for specific doctor.
+* **book.confirm(bot)** - Bot will provide booking details if a requested booking is made sucessfully.
+* **Appointment.alternate** - If user requested slot is not available, bot will suggest available slots for specific doctor. Other user provided details such as Practitioner name, date will be preserved through out whole conversation. When user provides an alternate time slot, system will check again with practice management system and proceeed with the booking if requested slot is available
 
 
 # Challenges we ran into
